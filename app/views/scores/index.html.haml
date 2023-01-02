@@ -1,0 +1,9 @@
+%h1 SCORES INDEX
+-@scores.each do |score|
+  %h2 Here is a list of scores
+  %h3 Strikes: 
+  %p=score.strike
+  %h3 Spares:
+  %p=score.spare
+  %h3 Total:
+  %p=score.total
