@@ -1,6 +1,7 @@
 %h1 SCORES INDEX
+%div=link_to "new score", new_score_path
+%h2 Here is a list of scores
 -@scores.each do |score|
-  %h2 Here is a list of scores
   %h3 Strikes: 
   %p=score.strike
   %h3 Spares:

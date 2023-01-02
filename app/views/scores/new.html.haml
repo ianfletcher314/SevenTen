@@ -1,0 +1,9 @@
+%h1 create a new score: 
+=form_with model: @score do |f|
+  =f.label :strike, "number of strikes"
+  =f.text_field :strike
+  =f.label :spare, "number of spares"
+  =f.text_field :spare
+  =f.label :total, "total score"
+  =f.text_field :total
+  =f.submit "Create"
