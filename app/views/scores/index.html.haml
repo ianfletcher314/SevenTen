@@ -1,5 +1,5 @@
-%h1 SCORES INDEX
-%div=link_to "new score", new_score_path
+%h1.pb-5 SCORES INDEX
+%div.btn.btn-primary=link_to "new score", new_score_path,class: "text-black"
 %h2 Here is a list of scores
 -@scores.each do |score|
   %h3 Strikes: 
