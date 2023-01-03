@@ -1,10 +1,22 @@
-%h1.pb-5 SCORES INDEX
-%div.btn.btn-primary=link_to "new score", new_score_path,class: "text-black"
-%h2 Here is a list of scores
--@scores.each do |score|
-  %h3 Strikes: 
-  %p=score.strike
-  %h3 Spares:
-  %p=score.spare
-  %h3 Total:
-  %p=score.total
+.p-3
+.row.justify-content-end
+  .col-auto.btn.btn-secondary=link_to "NEW SCORE", new_score_path,class: "text-light"
+%h2.p-3 TOP SCORES
+%table.table.table-dark
+  %thead
+    %tr
+      %th.text-center{ scope: "col"}TOTAL
+      %th.text-center{ scope: "col"}DATE
+      %th.text-center{ scope: "col"}Strikes
+      %th.text-center{ scope: "col"}Spares
+  %tbody
+    -@scores.each do |score| 
+      %tr
+        -# %p=score.strike
+        -# %h3 Spares:
+        -# %p=score.spare
+        -# %h3 Total:
+        %th.text-center{ scope: "row"}=link_to score.total , score_path(score)
+        %th.text-center{ scope: "row"}=link_to score.created_at.strftime("%m-%d-%Y"), score_path(score)
+        %th.text-center{ scope: "row"}=link_to score.strike, score_path(score)
+        %th.text-center{ scope: "row"}=link_to score.spare, score_path(score)

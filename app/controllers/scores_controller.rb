@@ -1,7 +1,7 @@
 class ScoresController < ApplicationController
   before_action :get_score, except: [:index,:new,:create]
   def index
-    @scores = Score.all
+    @scores = Score.all.order(total: :desc)
   end 
 
   def show
