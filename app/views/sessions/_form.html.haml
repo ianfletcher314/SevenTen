@@ -1,0 +1,17 @@
+= form_with(model: session) do |form|
+  - if session.errors.any?
+    %div{style: "color: red"}
+      %h2
+        = pluralize(session.errors.count, "error")
+        prohibited this session from being saved:
+      %ul
+        - session.errors.each do |error|
+          %li= error.full_message
+  %div
+    = form.label :lane, style: "display: block"
+    = form.text_field :lane
+  %div
+    = form.label :oil_condition, style: "display: block"
+    = form.text_field :oil_condition
+  %div
+    .btn.btn-secondary= form.submit

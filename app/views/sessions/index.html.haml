@@ -1,0 +1,8 @@
+%p{style: "color: green"}= notice
+%h1 Sessions
+#sessions
+  - @sessions.each do |session|
+    = render session
+    %p
+      = link_to "Show this session", session, class: "btn btn-secondary"
+= link_to "New session", new_session_path, class: "btn btn-secondary"

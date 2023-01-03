@@ -10,11 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_02_202551) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_03_225612) do
   create_table "scores", force: :cascade do |t|
     t.integer "strike"
     t.integer "spare"
     t.integer "total"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sessions", force: :cascade do |t|
+    t.string "lane"
+    t.string "oil_condition"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

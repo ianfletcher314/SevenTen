@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  lane: MyString
+  oil_condition: MyString
+
+two:
+  lane: MyString
+  oil_condition: MyString

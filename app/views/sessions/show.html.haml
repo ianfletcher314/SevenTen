@@ -1,0 +1,6 @@
+%p{style: "color: green"}= notice
+= render @session
+%div
+  = link_to "Edit this session", edit_session_path(@session), class: "btn btn-primary"
+  = link_to "Back to sessions", sessions_path, class: "btn btn-secondary"
+  = button_to "Destroy this session", @session, method: :delete, class: "btn btn-danger"
