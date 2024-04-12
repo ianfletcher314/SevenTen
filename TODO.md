@@ -12,4 +12,4 @@ TODO:
 * Build Dashboard
   * User logs in and sees their scores 
   * list their high score in a separate section 
-
+* Add Nav section
