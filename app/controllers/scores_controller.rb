@@ -3,7 +3,7 @@ class ScoresController < ApplicationController
 
   before_action :get_score, except: [:index,:new,:create]
   def index
-    @scores = Score.all.order(total: :desc)
+    @scores = Score.includes(:user).order(total: :desc)
   end 
 
   def show
@@ -19,7 +19,11 @@ class ScoresController < ApplicationController
     if params[:Body] # Handle incoming SMS from Twilio
       total, strikes, spares = extract_scores(params[:Body])
       if total && strikes && spares
-        Score.create(total: total, strike: strikes, spare: spares)
+        score = Score.create(total: total, strike: strikes, spare: spares)
+        user = User.find_by(phone_number: params[:From])
+        if user
+          UserScore.create(user: user, score: score)
+        end
       end
       head :ok # Respond with 200 status for Twilio
     else

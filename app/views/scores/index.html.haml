@@ -9,14 +9,12 @@
       %th.text-center{ scope: "col"}DATE
       %th.text-center{ scope: "col"}Strikes
       %th.text-center{ scope: "col"}Spares
+      %th.text-center{ scope: "col"}User
   %tbody
     -@scores.each do |score| 
       %tr
-        -# %p=score.strike
-        -# %h3 Spares:
-        -# %p=score.spare
-        -# %h3 Total:
         %th.text-center{ scope: "row"}=link_to score.total , score_path(score)
         %th.text-center{ scope: "row"}=link_to score.created_at.strftime("%m-%d-%Y"), score_path(score)
         %th.text-center{ scope: "row"}=link_to score.strike, score_path(score)
         %th.text-center{ scope: "row"}=link_to score.spare, score_path(score)
+        %th.text-center{ scope: "row"}=score.user&.email || "N/A"
