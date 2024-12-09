@@ -1,4 +1,5 @@
 class ScoresController < ApplicationController
+  before_action :authenticate_user!
   before_action :get_score, except: [:index,:new,:create]
   def index
     @scores = Score.all.order(total: :desc)
