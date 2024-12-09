@@ -2,7 +2,7 @@
 .row.justify-content-end
   .col-auto.btn.btn-secondary=link_to "NEW SCORE", new_score_path,class: "text-light"
 %h2.p-3 TOP SCORES
-%table.table.table-dark
+%table.table.table-dark.rounded-3.mb-0
   %thead
     %tr
       %th.text-center{ scope: "col"}TOTAL
@@ -17,4 +17,4 @@
         %th.text-center{ scope: "row"}=link_to score.created_at.strftime("%m-%d-%Y"), score_path(score)
         %th.text-center{ scope: "row"}=link_to score.strike, score_path(score)
         %th.text-center{ scope: "row"}=link_to score.spare, score_path(score)
-        %th.text-center{ scope: "row"}=score.user&.email || "N/A"
+        %th.text-center{ scope: "row"}=score.user&.name
