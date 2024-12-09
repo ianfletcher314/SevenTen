@@ -1,5 +1,7 @@
 class ScoresController < ApplicationController
   before_action :authenticate_user!
+  # TODO IAN the line above got devise working so we are gonna need to get the  views styled
+  # probably in a new view
   before_action :get_score, except: [:index,:new,:create]
   def index
     @scores = Score.all.order(total: :desc)
