@@ -1,6 +1,5 @@
 class ScoresController < ApplicationController
   skip_before_action :verify_authenticity_token, only: :create
-
   before_action :get_score, except: [:index, :new, :create]
   def index
     @scores = Score.includes(:user).order(total: :desc)
