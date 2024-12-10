@@ -1,10 +1,10 @@
 class ScoresController < ApplicationController
   skip_before_action :verify_authenticity_token, only: :create
 
-  before_action :get_score, except: [:index,:new,:create]
+  before_action :get_score, except: [:index, :new, :create]
   def index
     @scores = Score.includes(:user).order(total: :desc)
-  end 
+  end
 
   def show
   end
@@ -38,6 +38,7 @@ class ScoresController < ApplicationController
   end
 
   private
+
   def get_score
     @score = Score.find(params[:id])
   end
@@ -49,10 +50,10 @@ class ScoresController < ApplicationController
   def extract_scores(body)
     # Split the message into parts and convert to integers
     numbers = body.split.map(&:to_i)
-  
+
     # Ensure exactly three numbers are provided
     return unless numbers.size == 3
-  
+
     numbers
   end
 end
