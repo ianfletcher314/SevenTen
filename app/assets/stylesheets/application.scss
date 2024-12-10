@@ -1,8 +1,17 @@
- @import "bootstrap";
+@import "bootstrap";
 a{
   text-decoration: none;
   color: white;
   &:hover{
     color: aqua;
   }
+}
+
+.bowling-bg {
+  background-image: url('hero.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh; /* Full viewport height */
+  width: 100%;   /* Full width */
 }
