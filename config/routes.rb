@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
-  post '/twilio/sms', to: 'scores#create', as: :twilio_sms
+  post "/twilio/sms", to: "scores#create", as: :twilio_sms
 end

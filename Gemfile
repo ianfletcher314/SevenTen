@@ -8,6 +8,7 @@ gem "rails", "~> 7.0.4"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
+gem "sassc-rails"
 
 # Use sqlite3 as the database for Active Record
 # gem "sqlite3", "~> 1.4"
@@ -17,8 +18,7 @@ gem "pg"
 gem "puma", "~> 5.0"
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
-# gem "importmap-rails"
-gem "jsbundling-rails"
+gem "importmap-rails"
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
@@ -40,23 +40,26 @@ gem "haml"
 # gem "bcrypt", "~> 3.1.7"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
+gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
-# gem 'bootstrap'
-gem 'devise'
-gem 'kamal'
-gem 'thruster'
+gem "bootstrap"
+gem "devise"
+gem "kamal"
+gem "thruster"
 # Use Sass to process CSS
 # gem "sassc-rails"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
+gem "rack-mini-profiler"
 
 group :development, :test do
+  gem "standard-rails"
+  gem "standard"
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem "debug", platforms: %i[mri mingw x64_mingw]
 end
 
 group :development do
@@ -76,3 +79,5 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+gem "memory_profiler"
+gem "stackprof"
