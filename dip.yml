@@ -4,7 +4,7 @@ compose:
   files:
     - .dockerdev/compose.yml
     - docker-compose.$USER.yml
-  project_name: seven-ten
+  project_name: seventen
 
 environment:
   UID: ${DIP_CURRENT_USER}

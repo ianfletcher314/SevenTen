@@ -5,7 +5,7 @@ x-app: &app
     target: development
     args:
       UID: ${UID:-1000}
-  image: seven-ten:1.0.0
+  image: seventen:1.0.0
   user: bnb
   environment: &env
     NODE_ENV: ${NODE_ENV:-development}

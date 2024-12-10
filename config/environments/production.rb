@@ -90,4 +90,10 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.after_initialize do
+    ActiveRecord::Base.connection.migration_context.migrate
+  rescue
+    warn "Error running migration! Please review database configuration"
+  end
 end
