@@ -11,3 +11,4 @@ TODO:
 * make it so if you text wrong it texts you back saying what you did wrong
   * add other validations so this is more robust
 * Add turbo
+* fix devise

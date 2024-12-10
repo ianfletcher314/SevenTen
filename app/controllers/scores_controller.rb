@@ -30,6 +30,7 @@ class ScoresController < ApplicationController
       # Handle standard form submission
       @score = Score.new(score_params)
       if @score.save
+        UserScore.create(user: current_user, score: @score)
         redirect_to @score, notice: "Score successfully created."
       else
         render :new
