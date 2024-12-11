@@ -13,6 +13,7 @@ class ScoresController < ApplicationController
   end
 
   def create
+    puts("xxx hit this")
     # NOTE: rigth now this only works if we use ngrok to get a public url and update
     # the webhook here https://console.twilio.com/us1/develop/phone-numbers/manage/incoming/PN1c879659911f7f91eb7002c7e7a7c793/configure
     if params[:Body] # Handle incoming SMS from Twilio
